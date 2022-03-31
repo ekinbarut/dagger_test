@@ -23,14 +23,14 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v2
 
-      - name: "Setup Go"
-        uses: actions/setup-go@v1
+      - name: Project init
+        uses: dagger/dagger-for-github@v2
+        # See all options at https://github.com/dagger/dagger-for-github
         with:
-          go-version: 1.16
+          args: project init
 
-      - name: "Install dev Dagger"
-        run: |
-          make dagger
-      - name: "Dagger"
-        run: |
-          ${{ github.workspace }}/cmd/dagger/dagger do deploy
+      - name: Deploy to Netlify
+        uses: dagger/dagger-for-github@v2
+        # See all options at https://github.com/dagger/dagger-for-github
+        with:
+          args: do deploy

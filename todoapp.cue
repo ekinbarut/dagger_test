@@ -1,8 +1,8 @@
 package todoapp
 
 import (
-	"dagger.io/dagger"
-	"dagger.io/dagger/core"
+	"go.dagger.io/dagger"
+	"go.dagger.io/dagger/core"
 	"universe.dagger.io/alpine"
 	"universe.dagger.io/bash"
 	"universe.dagger.io/docker"
