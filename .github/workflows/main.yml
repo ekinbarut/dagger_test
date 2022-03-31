@@ -29,6 +29,12 @@ jobs:
         with:
           args: project init
 
+      - name: Project update
+        uses: dagger/dagger-for-github@v2
+        # See all options at https://github.com/dagger/dagger-for-github
+        with:
+          args: project update
+
       - name: Deploy to Netlify
         uses: dagger/dagger-for-github@v2
         # See all options at https://github.com/dagger/dagger-for-github
