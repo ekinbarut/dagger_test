@@ -14,3 +14,9 @@ steps:
 
 - script: ./bin/dagger do build
   displayName: 'dagger build'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'todoapp'
+    publishLocation: 'Container'
