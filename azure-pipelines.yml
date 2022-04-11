@@ -16,8 +16,5 @@ steps:
 - script: curl -L https://dl.dagger.io/dagger/install.sh | sh 
   displayName: 'install dagger'
 
-- script: type dagger 
-  displayName: 'test'
-
-- script: dagger do build
+- script: ./bin/dagger do build
   displayName: 'dagger build'
