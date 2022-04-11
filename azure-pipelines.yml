@@ -10,11 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: cd /usr/local 
-  displayName: 'cd usr'
+# - script: cd /usr/local 
+#   displayName: 'cd usr'
 
 - script: curl -L https://dl.dagger.io/dagger/install.sh | sh 
   displayName: 'install dagger'
+
+- script: type dagger 
+  displayName: 'test'
 
 - script: dagger do build
   displayName: 'dagger build'
